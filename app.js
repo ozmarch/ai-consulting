@@ -292,9 +292,20 @@ async function loadDashboardCounts() {
     const confirmCount = (text.match(/확정/g) || []).length;
 
     const nums = document.querySelectorAll('.stat-num');
-    if (nums[0]) nums[0].textContent = newCount;
-    if (nums[1]) nums[1].textContent = reviewCount;
-    if (nums[2]) nums[2].textContent = confirmCount;
+    const nums = document.querySelectorAll('.stat-num');
+   if (nums[0]) nums[0].textContent = newCount;
+   if (nums[1]) nums[1].textContent = reviewCount;
+   if (nums[2]) nums[2].textContent = confirmCount;
+
+const total = newCount + reviewCount + confirmCount;
+const chips = document.querySelectorAll('[data-filter]');
+chips.forEach(chip => {
+  const f = chip.dataset.filter;
+  if (f === 'all')     chip.textContent = `전체 ${total}`;
+  if (f === 'new')     chip.textContent = `신규 ${newCount}`;
+  if (f === 'review')  chip.textContent = `검토중 ${reviewCount}`;
+  if (f === 'confirm') chip.textContent = `확정 ${confirmCount}`;
+});
   } catch(e) {
     console.log('카운터 로드 실패', e);
   }
