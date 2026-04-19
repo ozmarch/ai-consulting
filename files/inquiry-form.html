@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>의뢰 정보 입력 · AI교육컨설팅</title>
+  <style>
+    :root {
+        --main-green: #2D4A37;
+        --point-orange: #C26D48;
+        --bg-cream: #FDF9F3;
+    }
+    body { font-size: 18px; color: var(--main-green); background: var(--bg-cream); margin: 0; font-family: sans-serif; }
+
+    .nav { width: 100%; background: #FDF9F3; border-bottom: 1px solid #eee; height: 80px; display: flex; align-items: center; }
+    .nav-inner { width: 100%; max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; box-sizing: border-box; }
+    .logo-area { display: flex; align-items: center; text-decoration: none; }
+    .logo-dots { display: flex; gap: 4px; margin-right: 12px; }
+    .logo-dots span { width: 7px; height: 7px; background-color: var(--point-orange) !important; border-radius: 50%; }
+    .logo-text { font-size: 26px; font-weight: 900; color: #1a1a1a; letter-spacing: -1px; }
+    .nav-links { display: flex !important; gap: 30px !important; align-items: center !important; }
+    .nav-links a {
+        text-decoration: none !important;
+        color: #333 !important;
+        font-size: 16px !important;
+        font-weight: 500;
+        white-space: nowrap !important;
+    }
+    .nav-links a:last-child {
+        font-weight: 800 !important;
+        border-bottom: 2px solid var(--main-green);
+    }
+
+    .form-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        padding: 50px;
+        margin-top: 30px;
+        text-align: left;
+    }
+
+    .selected-dates-box {
+        background: #FDF9F3;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 20px 25px;
+        margin-bottom: 30px;
+    }
+    .selected-dates-label {
+        font-size: 14px;
+        color: var(--point-orange);
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+    .date-item {
+        font-size: 16px;
+        color: #333;
+        padding: 4px 0;
+    }
+    .date-rank {
+        display: inline-block;
+        background: var(--main-green);
+        color: white;
+        padding: 2px 10px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-right: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+    .form-label {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--main-green);
+        margin-bottom: 8px;
+    }
+    .form-label .required {
+        color: var(--point-orange);
+        margin-left: 4px;
+    }
+    .form-input, .form-textarea, .form-select {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        font-family: sans-serif;
+        color: #333;
+        box-sizing: border-box;
+        background: white;
+        transition: border-color 0.2s;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+        outline: none;
+        border-color: var(--point-orange);
+    }
+    .form-textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .section-divider {
+        border-top: 1px solid #eee;
+        margin: 40px 0 30px;
+        padding-top: 30px;
+    }
+    .section-divider-label {
+        font-size: 13px;
+        color: #999;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+    }
+
+    .submit-btn {
+        background: var(--main-green);
+        color: white;
+        padding: 20px 45px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .submit-btn:hover {
+        background: #1e3525;
+    }
+
+    .bottom-nav {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .bottom-nav a {
+        color: #888;
+        text-decoration: none;
+    }
+
+    /* 제출 완료 화면 */
+    .success-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        padding: 60px 50px;
+        margin-top: 30px;
+        text-align: left;
+    }
+    .success-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid #eee;
+    }
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 20px;
+        background: var(--main-green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 30px;
+    }
+    .success-title {
+        font-size: 28px;
+        font-weight: 900;
+        color: var(--main-green);
+        margin: 0;
+    }
+    .summary-row {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 20px;
+        padding: 15px 0;
+        border-bottom: 1px solid #f5f5f5;
+        align-items: start;
+    }
+    .summary-label {
+        font-size: 14px;
+        color: #888;
+        font-weight: 600;
+    }
+    .summary-value {
+        font-size: 16px;
+        color: #333;
+        line-height: 1.6;
+    }
+    .success-footer {
+        margin-top: 40px;
+        padding: 25px;
+        background: #FDF9F3;
+        border-radius: 12px;
+        text-align: center;
+        font-size: 15px;
+        color: #666;
+        line-height: 1.7;
+    }
+    .success-footer strong {
+        color: var(--point-orange);
+        font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-area">
+          <div class="logo-dots"><span></span><span></span><span></span></div>
+          <span class="logo-text">AI교육컨설팅</span>
+      </a>
+      <div class="nav-links">
+          <a href="instructor-a.html">강사소개</a>
+          <a href="index.html#cases">고객사례</a>
+          <a href="index.html#programs">프로그램</a>
+          <a href="inquiry.html" style="font-weight: 800; border-bottom: 2px solid #2D4A37;">강의의뢰</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 입력 폼 화면 -->
+  <section id="form-section" style="max-width: 800px; margin: 0 auto; padding: 60px 20px;">
+    <div style="text-align: center;">
+      <h1 style="font-size: 42px; font-weight: 900; margin-bottom: 15px; color: var(--main-green);">의뢰 정보</h1>
+      <div style="width: 40px; height: 3px; background: var(--main-green); margin: 0 auto 25px;"></div>
+      <p style="color: #888; font-size: 16px; margin-bottom: 30px;">교육 담당자 정보를 입력해주세요</p>
+    </div>
+
+    <div class="form-card">
+      <!-- 선택한 날짜 표시 -->
+      <div class="selected-dates-box" id="selected-dates-box">
+        <div class="selected-dates-label">📅 선택하신 희망일</div>
+        <div id="selected-dates-display">
+          <p style="color: #BBB; margin: 0;">선택된 날짜가 없습니다. <a href="inquiry.html" style="color: var(--point-orange);">날짜 선택하기 →</a></p>
+        </div>
+      </div>
+
+      <!-- 필수 정보 -->
+      <div class="section-divider-label">필수 정보</div>
+
+      <div class="form-group">
+        <label class="form-label">담당자 이름<span class="required">*</span></label>
+        <input type="text" class="form-input" id="name" placeholder="예: 000" />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">연락처<span class="required">*</span></label>
+          <input type="text" class="form-input" id="phone" placeholder="010-0000-0000 또는 이메일" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">소속 기관·회사명<span class="required">*</span></label>
+          <input type="text" class="form-input" id="company" placeholder="예: OO기업 / OO교육청" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">예상 인원<span class="required">*</span></label>
+        <input type="text" class="form-input" id="participants" placeholder="예: 30명" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">강의 주제·문의사항<span class="required">*</span></label>
+        <textarea class="form-textarea" id="topic" placeholder="예: 팀장급 대상으로 AI를 업무에 활용하는 방법에 대한 교육을 요청드립니다."></textarea>
+      </div>
+
+      <!-- 선택 정보 -->
+      <div class="section-divider">
+        <div class="section-divider-label">선택 정보 (입력하지 않아도 괜찮아요)</div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">강의 시간</label>
+          <select class="form-select" id="duration">
+            <option value="">선택해주세요</option>
+            <option value="1시간">1시간</option>
+            <option value="2시간">2시간</option>
+            <option value="반나절 (4시간)">반나절 (4시간)</option>
+            <option value="하루 (8시간)">하루 (8시간)</option>
+            <option value="다회차">다회차 (여러 날)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">장소</label>
+          <select class="form-select" id="location">
+            <option value="">선택해주세요</option>
+            <option value="오프라인">오프라인</option>
+            <option value="온라인">온라인</option>
+            <option value="미정">미정</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">희망 강사</label>
+        <select class="form-select" id="instructor">
+          <option value="">선택해주세요</option>
+          <option value="강지수">강지수 강사</option>
+          <option value="박태인">박태인 강사</option>
+          <option value="이현정">이현정 강사</option>
+          <option value="추천받기">검토 후 적임자가 연락드립니다</option>
+        </select>
+      </div>
+
+      <div class="bottom-nav">
+        <a href="inquiry.html">← 날짜 다시 선택</a>
+        <button class="submit-btn" onclick="submitForm()">의뢰 접수하기 →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 제출 완료 화면 -->
+  <section id="success-section" style="max-width: 800px; margin: 0 auto; padding: 60px 20px; display: none;">
+    <div class="success-card">
+      <div class="success-header">
+        <div class="success-icon">✓</div>
+        <h1 class="success-title">감사합니다</h1>
+      </div>
+
+      <div id="summary-content">
+        <!-- JS로 채워짐 -->
+      </div>
+
+      <div class="success-footer">
+        <p style="margin: 0;">⏰ <strong>최대한 빨리</strong> 답변드리겠습니다</p>
+      </div>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="index.html" style="color: #888; text-decoration: none;">← 메인으로 돌아가기</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // 로컬 스토리지에서 선택된 날짜 가져오기
+    let selectedDates = [];
+    try {
+      const saved = localStorage.getItem('selectedDates');
+      if (saved) {
+        selectedDates = JSON.parse(saved);
+      }
+    } catch (e) {
+      selectedDates = [];
+    }
+
+    // 선택한 날짜 표시
+    function displaySelectedDates() {
+      const display = document.getElementById('selected-dates-display');
+      if (selectedDates.length > 0) {
+        display.innerHTML = '';
+        selectedDates.forEach((item, i) => {
+          display.innerHTML += `<div class="date-item"><span class="date-rank">${i + 1}순위</span>${item.y}년 ${item.m}월 ${item.d}일</div>`;
+        });
+      }
+    }
+
+    displaySelectedDates();
+
+    // 폼 제출
+async function submitForm() {
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const company = document.getElementById('company').value.trim();
+  const participants = document.getElementById('participants').value.trim();
+  const topic = document.getElementById('topic').value.trim();
+
+  // 필수값 검증
+  if (!name) { alert('담당자 이름을 입력해주세요.'); return; }
+  if (!phone) { alert('연락처를 입력해주세요.'); return; }
+  if (!company) { alert('소속 기관·회사명을 입력해주세요.'); return; }
+  if (!participants) { alert('예상 인원을 입력해주세요.'); return; }
+  if (!topic) { alert('강의 주제·문의사항을 입력해주세요.'); return; }
+
+  const duration = document.getElementById('duration').value;
+  const location = document.getElementById('location').value;
+  const instructor = document.getElementById('instructor').value;
+  const dates = selectedDates.map((item, i) => `${i+1}순위: ${item.y}년 ${item.m}월 ${item.d}일`).join(' / ');
+
+  // 중복 클릭 방지
+  const submitBtn = document.querySelector('.submit-btn');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '전송 중...';
+
+  try {
+    const response = await fetch('https://hook.eu2.make.com/h40rx188sot2uj153a2jimu9oto6tifq', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone, company, participants, topic, duration, location, instructor, dates })
+    });
+
+    if (!response.ok) throw new Error('전송 실패');
+
+    // 성공 화면 구성
+    let datesHtml = dates || '<span style="color:#BBB;">선택된 날짜 없음</span>';
+    let summaryHtml = `
+      <div class="summary-row"><div class="summary-label">📅 희망 날짜</div><div class="summary-value">${datesHtml}</div></div>
+      <div class="summary-row"><div class="summary-label">🏢 소속</div><div class="summary-value">${company}</div></div>
+      <div class="summary-row"><div class="summary-label">📛 담당자</div><div class="summary-value">${name}</div></div>
+      <div class="summary-row"><div class="summary-label">☎️ 연락처</div><div class="summary-value">${phone}</div></div>
+      <div class="summary-row"><div class="summary-label">👥 예상 인원</div><div class="summary-value">${participants}</div></div>
+      <div class="summary-row"><div class="summary-label">📝 강의 주제</div><div class="summary-value">${topic.replace(/\n/g, '<br>')}</div></div>
+    `;
+    if (duration) summaryHtml += `<div class="summary-row"><div class="summary-label">⏰ 강의 시간</div><div class="summary-value">${duration}</div></div>`;
+    if (location) summaryHtml += `<div class="summary-row"><div class="summary-label">📍 장소</div><div class="summary-value">${location}</div></div>`;
+    if (instructor) summaryHtml += `<div class="summary-row"><div class="summary-label">👔 희망 강사</div><div class="summary-value">${instructor}</div></div>`;
+
+    document.getElementById('summary-content').innerHTML = summaryHtml;
+    document.getElementById('form-section').style.display = 'none';
+    document.getElementById('success-section').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    localStorage.removeItem('selectedDates');
+
+  } catch (error) {
+    alert('오류가 발생했습니다. 다시 시도해주시거나 전화로 문의 부탁드립니다.');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '의뢰 접수하기 →';
+  }
+}
+     </script>
+
+</body>
+</html>
