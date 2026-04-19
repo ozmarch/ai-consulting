@@ -281,3 +281,23 @@
 
   document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 })();
+/* ============== Dashboard Counter ============== */
+async function loadDashboardCounts() {
+  try {
+    const res = await fetch('https://hook.eu2.make.com/33lra5aitl7jpmqfxfyfrscvirqgw18i');
+    const text = await res.text();
+
+    const newCount     = (text.match(/신규/g) || []).length;
+    const reviewCount  = (text.match(/검토중/g) || []).length;
+    const confirmCount = (text.match(/확정/g) || []).length;
+
+    const nums = document.querySelectorAll('.stat-num');
+    if (nums[0]) nums[0].textContent = newCount;
+    if (nums[1]) nums[1].textContent = reviewCount;
+    if (nums[2]) nums[2].textContent = confirmCount;
+  } catch(e) {
+    console.log('카운터 로드 실패', e);
+  }
+}
+
+if (document.querySelector('.stat-num')) loadDashboardCounts();
