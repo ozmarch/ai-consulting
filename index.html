@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI교육컨설팅 · 사람과 기술을 연결하는 세 명의 강사</title>
+  <meta name="description" content="AI보다 사람을 먼저 읽는 세 명의 강사. 기업·공공·교육 현장에 맞춤 설계된 AI 교육을 제공합니다." />
+  <meta property="og:title" content="AI교육컨설팅" />
+  <meta property="og:description" content="사람과 기술을 연결하는 세 명의 강사" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .prog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      grid-auto-rows: 1fr;
+    }
+    .prog-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .prog-head {
+      background: #2D4A37;
+      padding: 30px 24px;
+      text-align: center;
+    }
+    .prog-num {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin: 0 0 10px 0;
+      letter-spacing: 2px;
+    }
+    .prog-title {
+      font-size: 26px;
+      font-weight: 900;
+      color: white;
+      margin: 0;
+      line-height: 1.3;
+    }
+    .prog-body {
+      background: white;
+      padding: 24px 28px 28px;
+      flex: 1;
+    }
+    .prog-target {
+      font-size: 18px;
+      font-weight: 800;
+      color: #C26D48;
+      margin: 0 0 18px 0;
+    }
+    .prog-body ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 17px;
+      color: #222;
+      line-height: 2;
+    }
+    .prog-body ul li {
+      margin-bottom: 4px;
+    }
+    .prog-consulting {
+      border-radius: 12px;
+      background: #2D4A37;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 36px 32px;
+      box-sizing: border-box;
+      height: 100%;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 네비게이션 -->
+  <nav class="nav" style="width: 100%; background: #fdfaf4; border-bottom: 1px solid #eee; height: 80px; display: flex; align-items: center;">
+    <div class="nav-inner" style="width: 100%; max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; box-sizing: border-box;">
+      <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+        <div style="display: flex; gap: 4px; margin-right: 12px; align-items: center;">
+          <span style="width: 7px; height: 7px; background-color: #C26D48; border-radius: 50%; display: inline-block;"></span>
+          <span style="width: 7px; height: 7px; background-color: #C26D48; border-radius: 50%; display: inline-block;"></span>
+          <span style="width: 7px; height: 7px; background-color: #C26D48; border-radius: 50%; display: inline-block;"></span>
+        </div>
+        <span style="font-size: 28px; font-weight: 900; color: #1a1a1a; letter-spacing: -1.5px; white-space: nowrap; font-family: sans-serif;">AI교육컨설팅</span>
+      </a>
+      <div class="nav-links" style="display: flex; gap: 30px;">
+        <a href="index.html#instructor" style="text-decoration: none; color: #333; font-weight: 500; font-size: 16px;">강사 소개</a>
+        <a href="#cases" style="text-decoration: none; color: #333; font-weight: 500; font-size: 16px;">교육 사례</a>
+        <a href="#programs" style="text-decoration: none; color: #333; font-weight: 500; font-size: 16px;">프로그램</a>
+        <a href="inquiry.html" style="text-decoration: none; color: #333; font-weight: 500; font-size: 16px;">강의 의뢰</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero wrap" style="text-align: center; padding: 100px 0;">
+    <p class="eyebrow" style="font-size: 18px; letter-spacing: 4px; color: #888; margin-bottom: 25px; text-transform: uppercase;">3 Instructors · 3 Colors</p>
+    <h1 style="font-size: 64px; font-weight: 900; color: #1a1a1a; line-height: 1.2; letter-spacing: -2px; margin-bottom: 30px;">
+      사람과 기술을 연결하는<br>세 명의 강사
+    </h1>
+    <div style="width: 60px; height: 3px; background-color: #2D4A37; margin: 0 auto 30px;"></div>
+    <p style="font-size: 22px; font-weight: 500; color: #444; line-height: 1.8; margin-bottom: 45px;">
+      우리는 도구를 가르치지 않습니다.<br/>당신의 일을 먼저 읽고, 그 자리에 AI를 놓습니다.
+    </p>
+    <a href="inquiry.html" style="display: inline-flex; align-items: center; background-color: #C26D48; color: white; padding: 20px 45px; border-radius: 5px; text-decoration: none; font-size: 20px; font-weight: 800; box-shadow: 0 4px 15px rgba(194, 109, 72, 0.3);">
+      <span>강의 희망일</span>
+      <span style="width: 1px; height: 16px; background: rgba(255,255,255,0.4); margin: 0 20px;"></span>
+      <span>→</span>
+    </a>
+    <p style="font-size: 16px; color: #777; margin-top: 25px;">희망 일정을 선택하고, 간단한 의뢰서를 남겨주세요</p>
+  </section>
+
+  <!-- 초록 배너 -->
+  <section style="background-color: #2D4A37; padding: 120px 0; text-align: center;">
+    <p style="font-size: 16px; letter-spacing: 2px; color: rgba(255,255,255,0.7); margin-bottom: 15px;">Our Approach</p>
+    <h2 style="font-size: 36px; font-weight: 800; color: #ffffff; letter-spacing: -1px; margin: 0;">
+      AI를 연결하기 전에, 사람을 먼저 읽습니다
+    </h2>
+  </section>
+
+  <!-- 로고 슬라이더 -->
+  <section style="padding: 0; background: #fff; overflow: hidden; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+    <div style="display: flex; gap: 0; animation: marquee 160s linear infinite; width: max-content;">
+      <img src="logo-1.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-2.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-3.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-4.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-5.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-6.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-6-2.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-7.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-8.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-1.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-2.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-3.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-4.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-5.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-6.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-6-2.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-7.png" style="height: 100px; width: auto; object-fit: contain;">
+      <img src="logo-8.png" style="height: 100px; width: auto; object-fit: contain;">
+    </div>
+  </section>
+
+  <!-- 강사 소개 -->
+  <section class="section wrap" id="instructors" style="padding: 100px 0;">
+    <div class="section-head" style="text-align: center; margin-bottom: 60px;">
+      <p class="section-eyebrow" style="font-size: 16px; letter-spacing: 2px; color: #888; margin-bottom: 15px;">Meet the Trio</p>
+      <h2 class="section-title" style="font-size: 42px; font-weight: 900; color: #1a1a1a; letter-spacing: -1px;">세 명의 강사, 세 가지 전문 영역</h2>
+    </div>
+    <div class="trio-grid">
+      <a href="instructor-a.html" class="trio-card card-a" data-reveal>
+        <div class="trio-card-head" style="padding-bottom: 15px;">
+          <p class="trio-topic-label" style="font-size: 16px; letter-spacing: 2px; margin-bottom: 5px;">TOPIC</p>
+          <p class="trio-topic" style="font-size: 24px; font-weight: 600; color: #555; margin-top: 0; margin-bottom: 0;">#AI역량강화</p>
+          <p class="trio-subtopics" style="font-size: 18px; font-weight: 400; color: #777; margin-top: 2px; margin-bottom: 0;">#교육설계 · #리더십 · #데이터분석</p>
+        </div>
+        <div class="trio-portrait" style="height: auto !important; max-height: none !important; overflow: visible !important;">
+          <img src="profile1.png" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div class="trio-meta">
+          <p class="trio-name" style="font-size: 28px; font-weight: 800; color: #2D4A37; margin-bottom: 8px;">강사 강지수</p>
+          <p class="trio-credential" style="font-size: 18px;">이음AX전환연구소 대표<br>한국디지털교육원 원장</p>
+        </div>
+        <div class="trio-cta" style="display: flex; justify-content: flex-end; align-items: center; margin-top: 15px; cursor: pointer;">
+          <span style="font-size: 14px; font-weight: 600; color: #C26D48; margin-right: 5px;">프로필 보기</span>
+          <span style="color: #C26D48; font-size: 16px;">→</span>
+        </div>
+        <div class="trio-sig-bar"></div>
+      </a>
+      <a href="instructor-b.html" class="trio-card card-b" data-reveal>
+        <div class="trio-card-head" style="padding-bottom: 15px;">
+          <p class="trio-topic-label" style="font-size: 16px; letter-spacing: 2px; margin-bottom: 5px;">TOPIC</p>
+          <p class="trio-topic" style="font-size: 24px; font-weight: 600; color: #555; margin-top: 0; margin-bottom: 0;">#AI컨설팅</p>
+          <p class="trio-subtopics" style="font-size: 18px; font-weight: 400; color: #777; margin-top: 2px; margin-bottom: 0;">#업무효율 · #브랜딩 · #트랜드분석</p>
+        </div>
+        <div class="trio-portrait" style="height: auto !important; max-height: none !important; overflow: visible !important;">
+          <img src="profile2.png" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div class="trio-meta">
+          <p class="trio-name" style="font-size: 28px; font-weight: 800; color: #2D4A37; margin-bottom: 8px;">강사 박태인</p>
+          <p class="trio-credential" style="font-size: 18px;">넥스트전략연구소 대표<br>AI 교육컨설턴트</p>
+        </div>
+        <div class="trio-cta" style="display: flex; justify-content: flex-end; align-items: center; margin-top: 15px; cursor: pointer;">
+          <span style="font-size: 14px; font-weight: 600; color: #C26D48; margin-right: 5px;">프로필 보기</span>
+          <span style="color: #C26D48; font-size: 16px;">→</span>
+        </div>
+        <div class="trio-sig-bar"></div>
+      </a>
+      <a href="instructor-c.html" class="trio-card card-c" data-reveal>
+        <div class="trio-card-head" style="padding-bottom: 15px;">
+          <p class="trio-topic-label" style="font-size: 16px; letter-spacing: 2px; margin-bottom: 5px;">TOPIC</p>
+          <p class="trio-topic" style="font-size: 24px; font-weight: 600; color: #555; margin-top: 0; margin-bottom: 0;">#AI부모교육</p>
+          <p class="trio-subtopics" style="font-size: 18px; font-weight: 400; color: #777; margin-top: 2px; margin-bottom: 0;">#코칭 · #마음돌봄 · #AI글쓰기</p>
+        </div>
+        <div class="trio-portrait" style="height: auto !important; max-height: none !important; overflow: visible !important;">
+          <img src="profile3.png" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div class="trio-meta">
+          <p class="trio-name" style="font-size: 28px; font-weight: 800; color: #2D4A37; margin-bottom: 8px;">강사 이현정</p>
+          <p class="trio-credential" style="font-size: 18px;">이현정미래교육연구소 대표<br>교육 인플루언서</p>
+        </div>
+        <div class="trio-cta" style="display: flex; justify-content: flex-end; align-items: center; margin-top: 15px; cursor: pointer;">
+          <span style="font-size: 14px; font-weight: 600; color: #C26D48; margin-right: 5px;">프로필 보기</span>
+          <span style="color: #C26D48; font-size: 16px;">→</span>
+        </div>
+        <div class="trio-sig-bar"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 교육 사례 -->
+  <section class="section wrap" id="cases">
+    <div class="section-head" style="text-align: center; margin-bottom: 60px;">
+       <p class="section-eyebrow">Education Cases</p>
+       <h2 class="section-title">조직별 맞춤 AI 적용 사례</h2>
+    </div>
+    <div class="case-grid">
+      <article class="case-card">
+        <div class="case-thumb case-thumb-a"><span class="case-tag case-tag-a">공공·교육</span></div>
+        <div class="case-body">
+          <p class="case-meta">2025 · OO교육청</p>
+          <p class="case-headline">현직 교사 300명, 생성형 AI를 수업 설계에 들이다</p>
+          <p class="case-excerpt">"툴 사용법"이 아닌 "수업 재설계" 관점으로 접근. 4주 커리큘럼으로 전 학년 교사에게 실질적 변화.</p>
+        </div>
+      </article>
+      <article class="case-card">
+        <div class="case-thumb case-thumb-b"><span class="case-tag case-tag-b">중소기업</span></div>
+        <div class="case-body">
+          <p class="case-meta">2025 · OO제조</p>
+          <p class="case-headline">마케팅 3인팀, 콘텐츠 생산성을 세 배로</p>
+          <p class="case-excerpt">블로그·SNS·카탈로그 전 채널의 실제 업무 플로우를 분해해 팀 전용 프롬프트 체계를 함께 설계.</p>
+        </div>
+      </article>
+      <article class="case-card">
+        <div class="case-thumb case-thumb-c"><span class="case-tag case-tag-c">지자체</span></div>
+        <div class="case-body">
+          <p class="case-meta">2025 · OO시청</p>
+          <p class="case-headline">민원 응대 문서, AI로 절반의 시간에</p>
+          <p class="case-excerpt">공무원 대상 맞춤형 자동화. 보안 가이드라인 준수 안에서 안전하게 쓸 수 있는 범위를 함께 설정.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 프로그램 섹션 -->
+  <section class="section wrap" id="programs">
+    <div class="section-head" style="text-align: center; margin-bottom: 60px;">
+      <p class="section-eyebrow">Programs</p>
+      <h2 class="section-title">맞춤 설계하는 AI 교육 프로그램</h2>
+      <p class="section-sub" style="margin-left:auto; margin-right:auto;">정해진 커리큘럼을 끼워 맞추지 않습니다. 조직의 일을 먼저 분해한 뒤, 필요한 형태로 조립합니다.</p>
+    </div>
+
+    <div class="prog-grid">
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">01 · Literacy</p>
+          <p class="prog-title">AI 첫 만남 워크숍</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">처음 접하는 모든 직원</p>
+          <ul>
+            <li>AI에 대한 막연한 두려움 해소</li>
+            <li>생성형 AI 기본 개념 이해</li>
+            <li>업무에서 AI 활용 지점 찾기</li>
+            <li>실습 중심의 워크숍 진행</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">02 · Public</p>
+          <p class="prog-title">공공기관 AI 업무효율화</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">공무원·행정직</p>
+          <ul>
+            <li>공문서·보고서 AI 작성 실습</li>
+            <li>보안 가이드라인 내 안전 활용법</li>
+            <li>민원 응대 문서 자동화</li>
+            <li>부서별 맞춤 활용 시나리오</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">03 · Education</p>
+          <p class="prog-title">교사·학부모 AI 교육</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">교육 현장</p>
+          <ul>
+            <li>교과별 수업 재설계 실습</li>
+            <li>AI와 함께하는 자녀 교육</li>
+            <li>학교급별 AI 활용 전략</li>
+            <li>학부모 AI 리터러시 특강</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">04 · Startup</p>
+          <p class="prog-title">정부지원사업 제안서</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">소상공인·창업자</p>
+          <ul>
+            <li>AI로 정부지원사업 제안서 작성</li>
+            <li>기획서·사업계획서 경쟁력 강화</li>
+            <li>기존 제안서 AI로 고도화</li>
+            <li>심사위원 시선을 끄는 구성법</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">05 · Writing</p>
+          <p class="prog-title">기업 홍보 글쓰기</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">마케터·소상공인</p>
+          <ul>
+            <li>AI로 브랜드 스토리 작성</li>
+            <li>홍보 문구·보도자료 자동화</li>
+            <li>블로그·뉴스레터 콘텐츠 제작</li>
+            <li>톤앤매너 일관성 유지법</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">06 · SNS</p>
+          <p class="prog-title">AI 마케팅·SNS 자동화</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">SNS·브랜드 담당자</p>
+          <ul>
+            <li>인스타·블로그 콘텐츠 자동 생성</li>
+            <li>카드뉴스·숏폼 기획 자동화</li>
+            <li>채널별 맞춤 콘텐츠 전략</li>
+            <li>AI 도구 연동 발행 자동화</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">07 · Automation</p>
+          <p class="prog-title">업무 자동화 심화</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">기획·관리직</p>
+          <ul>
+            <li>반복 업무 AI 자동화 설계</li>
+            <li>데이터 정리·분석 자동화</li>
+            <li>AI 워크플로우 구축법</li>
+            <li>조직 맞춤 자동화 시나리오</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">08 · Strategy</p>
+          <p class="prog-title">기업 마케팅 전략</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">마케터·경영진</p>
+          <ul>
+            <li>AI로 시장·경쟁사 분석</li>
+            <li>타깃 고객 페르소나 설계</li>
+            <li>마케팅 전략 수립 워크숍</li>
+            <li>데이터 기반 의사결정법</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">09 · Matching</p>
+          <p class="prog-title">AI 업무 매칭</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">전 직군</p>
+          <ul>
+            <li>직무별 최적 AI 도구 매칭</li>
+            <li>업무 플로우 분석 후 AI 연결</li>
+            <li>바로 적용 가능한 도구 실습</li>
+            <li>직무별 AI 활용 가이드 제공</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">10 · Trend</p>
+          <p class="prog-title">리더를 위한 AI 트렌드</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">임원·팀장급</p>
+          <ul>
+            <li>AI 트렌드 핵심 정리</li>
+            <li>조직의 AI 도입 방향 설계</li>
+            <li>방향을 읽는 리더의 관점</li>
+            <li>리더가 알아야 할 AI 전략</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-head">
+          <p class="prog-num">11 · Coaching</p>
+          <p class="prog-title">AI 코칭 & 마음돌봄</p>
+        </div>
+        <div class="prog-body">
+          <p class="prog-target">학부모·코치</p>
+          <ul>
+            <li>AI 글쓰기와 감정 코칭의 결합</li>
+            <li>마음돌봄을 위한 AI 활용법</li>
+            <li>사람을 먼저 읽는 AI 접근법</li>
+            <li>코치·상담사를 위한 AI 과정</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 상담 연결 카드 -->
+      <a href="inquiry.html" class="prog-consulting">
+        <div>
+          <p style="font-size: 13px; color: rgba(255,255,255,0.6); margin: 0 0 15px 0; letter-spacing: 2px; text-align: center;">12 · Consulting</p>
+          <p style="font-size: 26px; font-weight: 900; color: white; margin: 0 0 20px 0; line-height: 1.4; text-align: center;">우리 조직에 맞는 AI 교육이<br>궁금하신가요?</p>
+          <p style="font-size: 16px; color: rgba(255,255,255,0.75); margin: 0; line-height: 1.8;">위 프로그램 외에도 조직 맞춤형 커리큘럼을 설계해드립니다. 먼저 여러분의 일을 들려주세요.</p>
+        </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 30px;">
+          <span style="color: #C26D48; font-size: 20px; font-weight: 800;">강의 의뢰하기 →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CTA 섹션 -->
+  <section class="cta-section wrap-narrow">
+    <p class="eyebrow">Ready to Start</p>
+    <h2>우리의 일을 먼저 읽게 해주세요</h2>
+    <p>강의 희망일을 세 개 남겨주시면,<br/>접수 확인 즉시 담당 강사가 연락드립니다.</p>
+    <a href="inquiry.html" class="btn">
+      <span>강의 희망일</span>
+      <span class="divider-v"></span>
+      <span>→</span>
+    </a>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">
+            <div class="logo-dots" aria-hidden="true" style="display: flex; gap: 4px; margin-right: 12px; align-items: center; margin-bottom: 8px;">
+              <a href="dashboard.html" style="display: flex; align-items: center; cursor: default; line-height: 1;" aria-hidden="true" tabindex="-1"><span style="width: 7px; height: 7px; background-color: #C26D48; border-radius: 50%; display: inline-block;"></span></a>
+              <span style="width: 7px; height: 7px; background-color: #C26D48; border-radius: 50%; display: inline-block;"></span>
+              <span style="width: 7px; height: 7px; background-color: #C26D48; border-radius: 50%; display: inline-block;"></span>
+            </div>
+            <span class="logo-text">AI교육컨설팅</span>
+          </a>
+          <p class="footer-tagline">사람을 먼저 읽고,<br/>그 자리에 기술을 연결합니다.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Site Map</p>
+          <div class="footer-links">
+            <a href="index.html#instructors">강사 소개</a>
+            <a href="#cases">교육 사례</a>
+            <a href="#programs">프로그램</a>
+            <a href="inquiry.html">강의 의뢰</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-heading">Instructors Blog</p>
+          <div class="footer-links">
+            <a href="https://blog.naver.com/madame_bb" target="_blank" style="color: #7FFFD4 !important;">강지수 블로그 ↗</a>
+            <a href="https://blog.naver.com/rinoa320" target="_blank" style="color: #7FFFD4 !important;">박태인 블로그 ↗</a>
+            <a href="https://blog.naver.com/hj2ywith" target="_blank" style="color: #7FFFD4 !important;">이현정 블로그 ↗</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <div class="footer-links">
+            <a href="inquiry.html" style="color: #C26D48 !important; font-size: 18px; font-weight: 700;">강의 의뢰하기 →</a>
+            <a href="#">평일 10:00 – 18:00</a>
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="Blog">bl</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AI교육컨설팅</p>
+        <p>개인정보처리방침 · 이용약관</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
