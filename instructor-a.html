@@ -80,7 +80,9 @@
   
   div[style*="grid-template-columns: 1fr 1.5fr"] { 
     grid-template-columns: 1fr !important; 
-    gap: 30px !important; 
+    gap: 30px !important;
+    .section-history { padding-bottom: 140px !important; }
+    .section-expertise { padding-bottom: 120px !important; }
   }
 }
   </style>
@@ -135,7 +137,7 @@
     </div>
 </section>
 
-<section class="wrap" style="max-width: 1100px; margin: 0 auto; padding: 80px 20px;">
+<section class="wrap section-history" style="max-width: 1100px; margin: 0 auto; padding: 80px 20px;">
   <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px;">
     
     <!-- 왼쪽: 자격증 -->
@@ -207,7 +209,7 @@
   </div>
 </section>
 
- <section class="section wrap" style="padding-bottom: 120px;">
+ <section class="section wrap section-expertise">
     <div class="section-head align-left">
       <div>
         <p class="section-eyebrow" style="color: var(--ink-a);">Expertise</p>
