@@ -1886,7 +1886,8 @@ input, textarea, select { font: inherit; }
   .dash-head h2 {
     white-space: nowrap !important;
   }
-
+/* 테이블 헤더 숨김 */
+.table-row.head { display: none !important; }
   /* 4. 테이블 모서리 통일 */
   .request-table {
     border-radius: 12px !important;
