@@ -1865,3 +1865,33 @@ input, textarea, select { font: inherit; }
   .section-head.align-left { flex-direction: column; align-items: flex-start; gap: 14px; }
   .nav-links { display: none; }
 }
+@media (max-width: 600px) {
+  /* 1. 카운터 박스 2x2 */
+  .dash-stat-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* 2. 필터 칩 한 줄 정렬 */
+  .filter-row {
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  .filter-chip {
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+  }
+
+  /* 3. 의뢰 리스트 한 줄 */
+  .dash-head h2 {
+    white-space: nowrap !important;
+  }
+
+  /* 4. 테이블 모서리 통일 */
+  .request-table {
+    border-radius: 12px !important;
+  }
+  .table-row.head {
+    border-radius: 12px 12px 0 0 !important;
+  }
+}
