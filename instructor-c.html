@@ -48,7 +48,9 @@
   
   div[style*="grid-template-columns: 1fr 1.5fr"] { 
     grid-template-columns: 1fr !important; 
-    gap: 30px !important; 
+    gap: 30px !important;
+    .section-history { padding-bottom: 140px !important; }
+    .section-expertise { padding-bottom: 120px !important; }
   }
 }
 </style>
@@ -101,8 +103,8 @@
     </div>
   </section>
 
-  <section class="wrap" style="padding: 80px 0; border-top: 1px solid #eee; height: auto;">
-    <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px;">
+  <section class="wrap section-history" style="max-width: 1100px; margin: 0 auto; padding: 80px 20px;">
+  <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px;">
       <div>
         <h3 style="font-size: 22px; font-weight: 900; color: #2D4A37; padding-bottom: 12px; border-bottom: 2px solid #2D4A37; margin-bottom: 25px;">자격증</h3>
         <ul style="list-style: none; padding: 0; margin: 0;">
@@ -138,7 +140,7 @@
   </div>
 </section>
 
- <section class="section wrap" style="padding-bottom: 120px;">
+ <section class="section wrap section-expertise">
     <div class="section-head align-left">
       <div>
         <p class="section-eyebrow" style="color: var(--ink-a);">Expertise</p>
