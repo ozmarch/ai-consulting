@@ -28,32 +28,29 @@
     .profile-portrait { background: #eee; border-radius: 20px; overflow: hidden; aspect-ratio: 3 / 4; display: flex; align-items: center; justify-content: center; }
     .profile-portrait img { width: 100%; height: 100%; object-fit: cover; }
     .profile-tag { background: white; border: 1px solid #ddd; padding: 6px 15px; border-radius: 50px; font-size: 14px; margin-right: 8px; color: #666; display: inline-block; }
-  @media (max-width: 600px) {
-  .nav-links { display: none !important; }
-  .nav-inner { padding: 0 20px !important; }
-  .nav { height: 60px !important; }
-
-  .profile-hero { padding: 40px 0 !important; }
-  .profile-hero-grid { 
-    grid-template-columns: 1fr !important; 
-    gap: 30px !important; 
-  }
-  .profile-portrait { 
-    max-width: 280px !important; 
-    margin: 0 auto !important; 
-  }
-  h1 span[style*="72px"] { font-size: 48px !important; }
-  
-  .wrap { padding: 0 20px !important; }
-  
-  div[style*="grid-template-columns: 1fr 1.5fr"] { 
-    grid-template-columns: 1fr !important; 
-    gap: 30px !important;
-    .section-history { padding-bottom: 140px !important; }
-    .section-expertise { padding-bottom: 120px !important; }
-  }
-}
-</style>
+ @media (max-width: 768px) {
+      .nav-links { display: none !important; }
+      .nav-inner { padding: 0 20px !important; }
+      .nav { height: 60px !important; }
+      .profile-hero { padding: 40px 0 !important; }
+      .profile-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+      }
+      .profile-portrait {
+        max-width: 280px !important;
+        margin: 0 auto !important;
+      }
+      h1 span[style*="72px"] { font-size: 48px !important; }
+      .wrap { padding: 0 20px !important; }
+      div[style*="grid-template-columns: 1fr 1.5fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+      }
+      .section-history { padding-bottom: 180px !important; }
+      .section-expertise { padding-bottom: 120px !important; }
+    }
+  </style>
 </head>
 <body class="profile-c">
 
@@ -127,7 +124,7 @@
           <li style="padding: 15px 0; border-bottom: 1px solid #eee;"><div style="font-size: 14px; color: #C26D48; font-weight: 700;">광주광역시</div><div style="font-size: 16px;">공공기관 업무 효율을 위한 생성형 AI 활용 행정 실무</div></li>
           <li style="padding: 15px 0; border-bottom: 1px solid #eee;"><div style="font-size: 14px; color: #C26D48; font-weight: 700;">제주도청</div><div style="font-size: 16px;">스마트 도정 실무자를 위한 챗GPT 맞춤형 특강</div></li>
           <li style="padding: 15px 0; border-bottom: 1px solid #eee;"><div style="font-size: 14px; color: #C26D48; font-weight: 700;">울산대학교</div><div style="font-size: 16px;">대학생 취업 역량 강화를 위한 AI 활용 자기소개서 작성</div></li>
-          <li style="padding: 15px 0; display: flex; justify-content: space-between; align-items: flex-end;">
+         <li style="padding: 15px 0;">
             <div><div style="font-size: 14px; color: #C26D48; font-weight: 700;">서울성북구립 아리랑도서관</div><div style="font-size: 16px;">양육자특강 '사춘기 딸과의 대화법'</div></div>
          <a href="javascript:void(0)" onclick="openProfileModal()" style="display: inline-flex; align-items: center; gap: 8px; color: #C26D48; text-decoration: none; font-size: 16px; font-weight: 700; white-space: nowrap; flex-shrink: 0;">
     <span>자세히 보기</span>
