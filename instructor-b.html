@@ -60,29 +60,35 @@
         font-weight: 700; margin-top: 40px; 
     }
     .divider-v { width: 1px; height: 15px; background: rgba(255,255,255,0.3); }
-  @media (max-width: 600px) {
+ @media (max-width: 768px) {
   .nav-links { display: none !important; }
   .nav-inner { padding: 0 20px !important; }
   .nav { height: 60px !important; }
-
   .profile-hero { padding: 40px 0 !important; }
-  .profile-hero-grid { 
-    grid-template-columns: 1fr !important; 
-    gap: 30px !important; 
+  .profile-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
   }
-  .profile-portrait { 
-    max-width: 280px !important; 
-    margin: 0 auto !important; 
+  .profile-portrait {
+    max-width: 280px !important;
+    margin: 0 auto !important;
   }
   h1 span[style*="72px"] { font-size: 48px !important; }
-  
   .wrap { padding: 0 20px !important; }
-  
-     grid-template-columns: 1fr !important; 
+  div[style*="grid-template-columns: 1fr 1.5fr"] {
+    grid-template-columns: 1fr !important;
     gap: 30px !important;
-    .section-history { padding-bottom: 140px !important; }
-    .section-expertise { padding-bottom: 120px !important; }
   }
+  ul li[style*="space-between"] {
+    display: block !important;
+  }
+  ul li[style*="space-between"] > a {
+    display: flex !important;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  .section { padding: 40px 0 !important; }
+  section[style*="padding: 80px 20px"] { padding: 40px 20px !important; }
 }
   </style>
 </head>
