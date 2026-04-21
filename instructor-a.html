@@ -89,54 +89,43 @@
     }
     .divider-v { width: 1px; height: 15px; background: rgba(255,255,255,0.3); }
 /* 1. PC 전용 설정: 간격 확보 및 사진 위치 고정 */
-  @media (min-width: 769px) {
-    .cases-section {
-        margin-top: 150px !important;
-        clear: both !important;
-        display: block !important;
-    }
-    /* 사진이 글자를 덮지 못하도록 공간 강제 확보 */
-    .profile-hero {
-        margin-bottom: 50px;
-    }
+ @media (min-width: 769px) {
+  .section-expertise {
+    padding-bottom: 72px;
   }
+}
 
-  /* 2. 모바일 전용 설정: PC 화면에 절대 영향을 주지 않도록 가두기 */
-  @media (max-width: 768px) {
-    .cases-section {
-        margin-top: 80px !important;
-        clear: both !important;
-    }
-    body { overflow-x: hidden; }
-    .nav-links { display: none !important; }
-    .nav-inner { padding: 0 20px !important; }
-    .nav { height: 60px !important; }
-    .profile-hero { padding: 40px 0 !important; }
-    .profile-hero-grid { 
-      grid-template-columns: 1fr !important; 
-      gap: 30px !important; 
-    }
-    .profile-portrait { 
-      max-width: 280px !important; 
-      margin: 0 auto !important; 
-    }
-    h1 span[style*="72px"] { font-size: 48px !important; }
-    .wrap { padding: 0 20px !important; }
-    div[style*="grid-template-columns: 1fr 1.5fr"] {
-      grid-template-columns: 1fr !important;
-      gap: 30px !important;
-    }
-    ul li[style*="space-between"] {
-      display: block !important;
-    }
-    ul li[style*="space-between"] > a {
-      display: flex !important;
-      justify-content: flex-end;
-      margin-top: 16px;
-    }
-    .section { padding: 40px 20px !important; }
-    section[style*="padding: 80px 20px"] { padding: 40px 20px !important; }
+@media (max-width: 768px) {
+  body { overflow-x: hidden; }
+  .nav-links { display: none !important; }
+  .nav-inner { padding: 0 20px !important; }
+  .nav { height: 60px !important; }
+  .profile-hero { padding: 40px 0 !important; }
+  .profile-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
   }
+  .profile-portrait {
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
+  h1 span[style*="72px"] { font-size: 48px !important; }
+  .wrap { padding: 0 20px !important; }
+  div[style*="grid-template-columns: 1fr 1.5fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  ul li[style*="space-between"] {
+    display: block !important;
+  }
+  ul li[style*="space-between"] > a {
+    display: flex !important;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  .section { padding: 40px 20px !important; }
+  section[style*="padding: 80px 20px"] { padding: 40px 20px !important; }
+}
   </style>
 </head>
 <body class="profile-a">
@@ -287,7 +276,7 @@
     </div>
   </section>
 
-<section class="section wrap" style="padding-bottom: 120px;">
+<section class="section wrap selected-cases-section" style="padding-bottom: 120px;">
   <div class="section-head align-left">
     <div>
       <p class="section-eyebrow" style="color: var(--ink-a);">Selected Cases</p>
