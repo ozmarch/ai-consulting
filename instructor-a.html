@@ -88,15 +88,20 @@
         font-weight: 700; margin-top: 40px; 
     }
     .divider-v { width: 1px; height: 15px; background: rgba(255,255,255,0.3); }
-  /* 1. PC 화면 전용 설정 (간격만 벌리고 사진 위치는 건드리지 않음) */
+/* 1. PC 전용 설정: 간격 확보 및 사진 위치 고정 */
   @media (min-width: 769px) {
     .cases-section {
         margin-top: 150px !important;
         clear: both !important;
+        display: block !important;
     }
-  } 
+    /* 사진이 글자를 덮지 못하도록 공간 강제 확보 */
+    .profile-hero {
+        margin-bottom: 50px;
+    }
+  }
 
-  /* 2. 모바일 화면 전용 설정 (여기서부터 모바일 설정 끝까지) */
+  /* 2. 모바일 전용 설정: PC 화면에 절대 영향을 주지 않도록 가두기 */
   @media (max-width: 768px) {
     .cases-section {
         margin-top: 80px !important;
@@ -131,7 +136,7 @@
     }
     .section { padding: 40px 20px !important; }
     section[style*="padding: 80px 20px"] { padding: 40px 20px !important; }
-  }  
+  }
   </style>
 </head>
 <body class="profile-a">
