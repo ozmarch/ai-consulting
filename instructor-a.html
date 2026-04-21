@@ -6,6 +6,34 @@
   <title>강사 강지수 · AI교육컨설팅</title>
   <link rel="stylesheet" href="styles.css" />
 <style>
+    :root { 
+        --main-green: #2D4A37; 
+        --point-orange: #C26D48; 
+        --bg-cream: #FDF9F3; 
+    }
+    body { background: var(--bg-cream); color: var(--main-green); font-family: sans-serif; margin: 0; }
+
+    .nav { width: 100%; background: #FDF9F3; border-bottom: 1px solid #eee; height: 80px; display: flex; align-items: center; }
+    .nav-inner { width: 100%; max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; box-sizing: border-box; }
+    .logo-dots span { width: 7px; height: 7px; background-color: var(--point-orange) !important; border-radius: 50%; display: inline-block; margin-right: 4px; }
+    .logo-text { font-size: 26px; font-weight: 900; color: #1a1a1a; text-decoration: none; }
+    .logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-links a { text-decoration: none; color: #333; font-weight: 500; font-size: 16px; }
+    .nav-links a.active { font-weight: 800; border-bottom: 2px solid var(--main-green); }
+
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .profile-hero { padding: 80px 0; }
+    .profile-hero-grid { display: grid; grid-template-columns: 400px 1fr; gap: 80px; align-items: start; }
+    .profile-portrait { background: #eee; border-radius: 20px; overflow: hidden; aspect-ratio: 3 / 4; display: flex; align-items: center; justify-content: center; }
+    .profile-portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .profile-tag { background: white; border: 1px solid #ddd; padding: 6px 15px; border-radius: 50px; font-size: 14px; margin-right: 8px; color: #666; display: inline-block; }
+@media (max-width: 560px) {
+  .history-list-item-a { flex-direction: column; align-items: flex-start; }
+  .history-list-item-a a { margin-top: 10px; }
+  .profile-name { font-size: 48px !important; } /* 너무 큰 글씨 자동 축소 */
+}
+/* --- 모바일 화면 최적화 끝 --- */  
     /* [1. 메인 페이지와 동일한 컬러/폰트 설정] */
     :root { 
         --main-green: #2D4A37; 
@@ -65,7 +93,6 @@
   .nav-links { display: none !important; }
   .nav-inner { padding: 0 20px !important; }
   .nav { height: 60px !important; }
-
   .profile-hero { padding: 40px 0 !important; }
   .profile-hero-grid { 
     grid-template-columns: 1fr !important; 
@@ -76,9 +103,7 @@
     margin: 0 auto !important; 
   }
   h1 span[style*="72px"] { font-size: 48px !important; }
-  
-  .wrap { padding: 0 20px !important; }
-  
+  .wrap { padding: 0 20px !important; } 
   div[style*="grid-template-columns: 1fr 1.5fr"] { 
     grid-template-columns: 1fr !important; 
     gap: 30px !important;
@@ -93,6 +118,7 @@ ul li[style*="space-between"] > a {
   }
      .section { padding: 40px 0 !important; }
    section[style*="padding: 80px 20px"] { padding: 40px 20px !important; }
+ }   
   </style>
 </head>
 <body class="profile-a">
@@ -119,7 +145,6 @@ ul li[style*="space-between"] > a {
     </div>
       <div style="position: relative; min-height: 500px;">
         <p class="profile-eyebrow" style="color: #C26D48; letter-spacing: 2px; font-weight: 800; margin-bottom: 10px;">INSTRUCTOR 01</p>
-        
         <h1 style="margin: 0 0 25px 0; line-height: 1.1;">
           <span style="font-size: 24px; color: #666; font-weight: 500; letter-spacing: -0.5px;">강사</span><br>
           <span style="font-size: 72px; font-weight: 900; color: #2D4A37; letter-spacing: -2px; font-family: '여기에_메인페이지_폰트명', sans-serif;">강지수</span>
